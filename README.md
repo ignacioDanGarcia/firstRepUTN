@@ -2,7 +2,7 @@
 most exercises
 
 ### honey bear note(?
-#### (8just a nice reminder in spanish)
+#### (just a nice reminder in spanish)
 
 cada vez que uno hace cambios y actualiza la rama dev con un pull request se deben realizar los siguientes pasos:
 
