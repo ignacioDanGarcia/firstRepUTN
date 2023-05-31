@@ -191,86 +191,9 @@ public class Main {
     las clases Circle y Square respectivamente, ambas de las cuales implementan la interfaz
     Drawable. Luego, se llama al método draw() en ambas variables, y se ejecutan las
     implementaciones específicas de cada clase, lo que muestra el polimorfismo en acción.
- */
 
+-----------------------------------------------------------------------
 
-    //-----------------------------------------------------------------------
-    /*
-    7.Control y lanzamiento de excepciones personalizadas en Java:
-
-    El control y lanzamiento de excepciones personalizadas en Java implica la creación de
-    excepciones personalizadas y su manejo adecuado utilizando bloques try-catch en la
-    programación orientada a objetos.
-
-    Aquí hay un ejemplo detallado:
-    */
-    // Creamos una excepción personalizada que hereda de Exception
-    class CustomException extends Exception {
-        public CustomException(String message) {
-            super(message);
-        }
-    }
-
-    // Clase que utiliza la excepción personalizada
-    class MiClase {
-        public void metodoQueLanzaExcepcion() throws CustomException {
-            // Lanzamos la excepción personalizada con un mensaje de error
-            throw new CustomException("Esto es una excepción personalizada.");
-        }
-    }
-
-    public class MainTres {
-        public static void main(String[] args) {
-            MiClase miObjeto = new MiClase();
-            try {
-                miObjeto.metodoQueLanzaExcepcion();
-            } catch (CustomException e) {
-                System.out.println("¡Se ha capturado una excepción personalizada!");
-                System.out.println("Mensaje de la excepción: " + e.getMessage());
-            }
-        }
-    }
-/*
-    En este ejemplo, creamos una excepción personalizada llamada CustomException que hereda de la
-    clase Exception. Luego, en la clase MiClase, definimos un método llamado metodoQueLanzaExcepcion()
-    que lanza la excepción personalizada utilizando la palabra clave throws.
-
-
-    En el bloque try del método main(), creamos una instancia de MiClase y llamamos al método
-    metodoQueLanzaExcepcion(), que lanza la excepción personalizada. Luego, en el bloque catch,
-    capturamos la excepción personalizada CustomException y manejamos el error mostrando un mensaje
-    en la consola.
-
-
-    Es importante tener en cuenta que, al utilizar excepciones personalizadas, es necesario declararlas
-    con la palabra clave throws en la firma del método que las lanza, y capturarlas adecuadamente
-    utilizando bloques try-catch en los lugares apropiados para manejar los errores de manera adecuada.
-
-    El método getMessage() es un método de la clase Throwable, que es la clase base para todas las
-    excepciones en Java, incluyendo las excepciones personalizadas que hayas creado. Este método te
-    permite obtener el mensaje asociado a la excepción, que puede ser proporcionado cuando se crea la
-    instancia de la excepción o durante su lanzamiento.
-    */
-/*
-    Al crear la instancia de la excepción personalizada CustomException
-    en la línea throw new CustomException("Esto es una excepción personalizada.");, se le pasa un mensaje
-    de error como argumento. Este mensaje de error se puede obtener más tarde utilizando el método
-    getMessage() en el bloque catch.
-
-    La clase Exception tiene funciones predeterminadas. El uso de super() en las excepciones personalizadas
-    se refiere a llamar al constructor de la clase padre de la jerarquía de excepciones, pasando un mensaje
-    de error como argumento.
-
-
-    Lo que generalmente se hace es una funcion en una clase que pueda tirar una excepcion personalizada, se
-    crea la excepcion personalizada que extienda de Exception o runtimeException, y en el mail se coloca la
-    funcion que puede generar una excepcion dentro del TRY, y la accion a seguir si salta la excepcion en
-    el CATCH. En la clase personalizada, dentro del constructor, se usa el super(<lo pasado por parametros
-    que generalmente es un mensaje>)
-
-
-    //-----------------------------------------------------------------------
-/*
     En el constructor de una clase heredada, se puede poner el SUPER() (y si el constructor recibe algo por
     paramtros tambien habria que ponerselo en el parentesis del super), para que haga lo mismo que el
     constructor de la clase padre. Y despues dentro de un metodo de la clase hija, se puede usar el
@@ -285,10 +208,9 @@ public class Main {
     Un metodo abstracto en una clase abstracta hace el trabajo de una interfaz, pero solamente en esa
     clase. Se declara la funcion en la clase padre, sin implementacion, dado que esta se escribira en
     la clase hija, con el decorator OVERRIDE encima
- */
 
-//-----------------------------------------------------------------------
-/*
+-----------------------------------------------------------------------
+
     en Java se puede modificar la implementación de un método de una clase abstracta dentro de una clase
     concreta que hereda de la clase abstracta.
 
