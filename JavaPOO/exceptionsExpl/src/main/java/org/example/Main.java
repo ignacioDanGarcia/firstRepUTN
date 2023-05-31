@@ -1,5 +1,5 @@
 package org.example;
-//errors left exists cause of all classes in same archive
+
 public class Main {
     //-----------------------------------------------------------------------
     /*
