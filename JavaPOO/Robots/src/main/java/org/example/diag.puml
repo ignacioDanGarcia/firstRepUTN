@@ -1,0 +1,86 @@
+@startuml
+
+interface RobotBuilder {
+    + void setNumeroSerie(String numeroSerie)
+    + void setTraccion(Traccion traccion)
+    + void setArmamento(Armamento armamento)
+    + void setResistencia(Integer resistencia)
+    + Robot build()
+}
+
+
+
+abstract class Traccion {
+    - String entorno
+    - Integer restaHp
+    - Integer kmLeft
+    - Integer potenciaTraccionBase
+    + Traccion()
+    + String getEntorno()
+    + Integer getRestaHp()
+    + void restarPotenciaTraccion(Integer potenciaTraccion)
+    + boolean necesitaReemplazo()
+}
+
+abstract class Armamento {
+    + Armamento()
+    + void atacar(Robot objetivo)
+}
+
+class Espada {
+    + Espada()
+    + void atacar(Robot objetivo)
+}
+
+class Granadas {
+    + Granadas()
+    + void atacar(Robot objetivo)
+}
+
+class RayoLaser {
+    + RayoLaser()
+    + void atacar(Robot objetivo)
+}
+
+class RuedaCaucho {
+    + RuedaCaucho()
+    + Integer restarPotenciaTraccion(Integer potenciaTraccion)
+    + boolean necesitaReemplazo()
+}
+
+class Oruga {
+    + Oruga()
+    + Integer restarPotenciaTraccion(Integer potenciaTraccion)
+    + boolean necesitaReemplazo()
+}
+
+class RuedaCauchoBuilder {
+    - Robot robot
+    + RuedaCauchoBuilder()
+    + void setNumeroSerie(String numeroSerie)
+    + void setTraccion()
+    + void setArmamento(Armamento armamento)
+    + void setResistencia(Integer resistencia)
+    + Robot build()
+}
+
+class OrugaBuilder {
+    - Robot robot
+    + OrugaBuilder()
+    + void setNumeroSerie(String numeroSerie)
+    + void setTraccion()
+    + void setArmamento(Armamento armamento)
+    + void setResistencia(Integer resistencia)
+    + Robot build()
+}
+
+
+Traccion <|-- RuedaCaucho
+Traccion <|-- Oruga
+Armamento <|-- Espada
+Armamento <|-- Granadas
+Armamento <|-- RayoLaser
+RobotBuilder <|-- RuedaCauchoBuilder
+RobotBuilder <|-- OrugaBuilder
+
+@enduml
