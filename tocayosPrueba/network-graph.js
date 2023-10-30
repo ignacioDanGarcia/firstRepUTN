@@ -2,9 +2,9 @@
 
 // Función para obtener las ramas del repositorio desde la API de GitHub
 function getBranches() {
-  const owner = 'nombre_del_propietario';
-  const repo = 'nombre_del_repositorio';
-  const token = 'TU_TOKEN_DE_ACCESO';
+  const owner = 'ignacioDanGarcia';
+  const repo = 'firstRepUTN';
+  const token = 'f9af2f88370826bb962d12033abd02a59e70f23f';
 
   return fetch(`https://api.github.com/repos/${owner}/${repo}/branches`, {
     headers: {
