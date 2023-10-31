@@ -12,9 +12,19 @@
   </div>
   <div id="network-graph">
     <iframe src="https://ghbtns.com/github-btn.html?user=ignacioDanGarcia&repo=firstRepUTN&type=network&count=true" frameborder="0" scrolling="0" width="100px" height="20px" style="margin: 0px; padding: 0px; border: 0px;"></iframe>
+    
 
   </div>
-  <script src=tocayosPrueba/index.js></script>
+  <iframe id="my-iframe" src=""></iframe>
+  <script>
+    fetch('https://api.github.com/repos/USERNAME/REPO/contents/PATH/TO/FILE')
+      .then(response => response.json())
+      .then(data => {
+        const iframe = document.getElementById('my-iframe');
+        iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
+      });
+  </script>
+  
   <script src=tocayosPrueba/network-graph.js></script>
 </body>
 </html>
